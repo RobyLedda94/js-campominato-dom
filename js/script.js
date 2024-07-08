@@ -20,6 +20,15 @@ const grid = document.getElementById('grid');
 let bombsArray = [];
 let score = 0;
 
+// DEFINISCO LA FUNZIONE PER GENERARE 16 NUMERI CASUALI RANDOMICI
+
+function generateBombs(){
+    bombsArray = [];
+    while (bombsArray.length < 16){
+        
+    }
+}
+
 // DEFINISCO LA FUNZIONE CHE CREA I QUADRATI NELLA GRIGLIA
 function createSquare(numero){
         // VARIABILE CREAZIONE ELEMENTO
