@@ -28,7 +28,9 @@ function generateBombs(){
         // GENERO UN NUMERO CASUALE RANDOMICO DA 0 A 100
         let randomNumber = Math.floor(Math.random() * 100);
         console.log(randomNumber);
+        // CREO UNA CONDIZIONE DI CONTROLLO, ASSICURA ASSICURA CHE NON CI SIANO DUPLICATI
         if (!bombsArray.includes(randomNumber)){
+            // AGGIUNGO LE BOMBE NELL'ARRAY
             bombsArray.push(randomNumber);
             console.log(bombsArray);
         } 
@@ -55,6 +57,7 @@ function createSquare(numero){
 // DICO AL BOTTONE DI RESTARE IN ATTESA DELL'EVENTO 'CLICK'
 
 btn.addEventListener('click', function(){
+    // RICHIAMO LA FUNZIONE generateBombs ALL'INTERNO DELL'EVENTO CLICK
     generateBombs();
     // PULISCO LA GRIGLIA PRIMA DI CREARNE UNA NUOVA
     grid.innerHTML = '';
