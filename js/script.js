@@ -32,7 +32,7 @@ function generateBombs(){
         if (!bombsArray.includes(randomNumber)){
             // AGGIUNGO LE BOMBE NELL'ARRAY
             bombsArray.push(randomNumber);
-            // console.log(bombsArray);
+            console.log(bombsArray);
         } 
     }
 }
@@ -49,6 +49,11 @@ function createSquare(numero){
     currentSquare.addEventListener('click', function (){
         // console.log(this);
         // this.classList.toggle('clicked');
+        // STABILISCO LA CONDIZIONE NEL CASO IN CUI TROVO UNA BOMBA 
+        if (bombsArray.includes(numero)){
+            // LA CELLA CLICCATA DIVENTA ROSSA 
+            this.style.backgroundColor = 'red';
+        }
     });
     return currentSquare;
 
