@@ -13,6 +13,13 @@ const btn = document.getElementById('start');
 
 const grid = document.getElementById('grid');
 
+
+
+// DEFINISCO LE VARIABILI DEL GIOCO
+
+let bombsArray = [];
+let score = 0;
+
 // DEFINISCO LA FUNZIONE CHE CREA I QUADRATI NELLA GRIGLIA
 function createSquare(numero){
         // VARIABILE CREAZIONE ELEMENTO
