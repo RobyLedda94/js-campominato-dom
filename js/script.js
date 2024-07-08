@@ -52,9 +52,13 @@ function createSquare(numero){
             // LA CELLA CLICCATA DIVENTA ROSSA 
             this.style.backgroundColor = 'red';
             // MESSAGGIO ALL'UNTENTE CHE HA PERSO
-            alert('Hai perso riprova');
+            alert(`Hai perso! Il tuo punteggio finale è ${score}`);
+            // RESET DELLO SCORE QUANDO L'UTENTE PERDE
+            score = 0;
         } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA la BOMBA
             this.style.backgroundColor = 'lightblue';
+            // INCREMENTO DEL PUNTEGGIO
+            score++;
         }
     });
     return currentSquare;
