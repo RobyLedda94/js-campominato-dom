@@ -28,10 +28,11 @@ function generateBombs(){
         // GENERO UN NUMERO CASUALE RANDOMICO DA 0 A 100
         let randomNumber = Math.floor(Math.random() * 100);
         console.log(randomNumber);
-        if {
+        if (!bombsArray.includes(randomNumber)){
             bombsArray.push(randomNumber);
-        }
+        } 
     }
+    console.log(bombsArray);
 }
 
 // DEFINISCO LA FUNZIONE CHE CREA I QUADRATI NELLA GRIGLIA
