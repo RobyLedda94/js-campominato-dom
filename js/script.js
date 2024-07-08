@@ -30,9 +30,9 @@ function generateBombs(){
         console.log(randomNumber);
         if (!bombsArray.includes(randomNumber)){
             bombsArray.push(randomNumber);
+            console.log(bombsArray);
         } 
     }
-    console.log(bombsArray);
 }
 
 // DEFINISCO LA FUNZIONE CHE CREA I QUADRATI NELLA GRIGLIA
@@ -55,6 +55,7 @@ function createSquare(numero){
 // DICO AL BOTTONE DI RESTARE IN ATTESA DELL'EVENTO 'CLICK'
 
 btn.addEventListener('click', function(){
+    generateBombs();
     // PULISCO LA GRIGLIA PRIMA DI CREARNE UNA NUOVA
     grid.innerHTML = '';
     // ESEGUO UN CICLO DI 100 ITERAZIONI PER CREARE UNA GRIGLIA 10X10
