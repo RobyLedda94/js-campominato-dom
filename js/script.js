@@ -32,7 +32,7 @@ function generateBombs(){
         if (!bombsArray.includes(randomNumber)){
             // AGGIUNGO LE BOMBE NELL'ARRAY
             bombsArray.push(randomNumber);
-            console.log(bombsArray);
+            // console.log(bombsArray);
         } 
     }
 }
@@ -47,8 +47,8 @@ function createSquare(numero){
     currentSquare.innerText = numero + 1;
         // AGGIUNGO L'EVENTO CLICK ALLA CELLA (FUNZIONE ANONIMA)
     currentSquare.addEventListener('click', function (){
-        console.log(this);
-        this.classList.toggle('clicked');
+        // console.log(this);
+        // this.classList.toggle('clicked');
     });
     return currentSquare;
 
