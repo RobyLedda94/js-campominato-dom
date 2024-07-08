@@ -59,6 +59,11 @@ function createSquare(numero){
             this.style.backgroundColor = 'lightblue';
             // INCREMENTO DEL PUNTEGGIO
             score++;
+            // CONDIZIONE CHE STABILISCE LA VITTORIA DEVO STABILIRE CHE TUTTE LE BOMBE PRESENTI NON SONO STATE CLICCATE
+            if (score === 100 - 16){
+            // MESSAGGIO ALL'UNTENTE CHE HA VINTO
+            alert(`Hai vinto! Il tuo punteggio finale è ${score}`);
+            }
         }
     });
     return currentSquare;
