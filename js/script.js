@@ -47,12 +47,13 @@ function createSquare(numero){
     currentSquare.innerText = numero + 1;
         // AGGIUNGO L'EVENTO CLICK ALLA CELLA (FUNZIONE ANONIMA)
     currentSquare.addEventListener('click', function (){
-        // console.log(this);
-        // this.classList.toggle('clicked');
         // STABILISCO LA CONDIZIONE NEL CASO IN CUI TROVO UNA BOMBA 
         if (bombsArray.includes(numero)){
             // LA CELLA CLICCATA DIVENTA ROSSA 
             this.style.backgroundColor = 'red';
+        } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA la BOMBA
+            this.style.backgroundColor = 'lightblue';
+
         }
     });
     return currentSquare;
