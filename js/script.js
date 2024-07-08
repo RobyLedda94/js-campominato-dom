@@ -51,9 +51,10 @@ function createSquare(numero){
         if (bombsArray.includes(numero)){
             // LA CELLA CLICCATA DIVENTA ROSSA 
             this.style.backgroundColor = 'red';
+            // MESSAGGIO ALL'UNTENTE CHE HA PERSO
+            alert('Hai perso riprova');
         } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA la BOMBA
             this.style.backgroundColor = 'lightblue';
-
         }
     });
     return currentSquare;
