@@ -28,6 +28,9 @@ function generateBombs(){
         // GENERO UN NUMERO CASUALE RANDOMICO DA 0 A 100
         let randomNumber = Math.floor(Math.random() * 100);
         console.log(randomNumber);
+        if {
+            bombsArray.push(randomNumber);
+        }
     }
 }
 
