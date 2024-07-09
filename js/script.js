@@ -19,6 +19,7 @@ const grid = document.getElementById('grid');
 
 let bombsArray = [];
 let score = 0;
+let gameOver = false;
 
 // DEFINISCO LA FUNZIONE PER GENERARE 16 NUMERI CASUALI RANDOMICI
 
@@ -55,6 +56,7 @@ function createSquare(numero){
             alert(`Hai perso! Il tuo punteggio finale è ${score}`);
             // RESET DELLO SCORE QUANDO L'UTENTE PERDE
             score = 0;
+            gameOver = true;
         } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA la BOMBA
             this.style.backgroundColor = 'lightblue';
             // INCREMENTO DEL PUNTEGGIO
@@ -63,6 +65,7 @@ function createSquare(numero){
             if (score === 100 - 16){
             // MESSAGGIO ALL'UNTENTE CHE HA VINTO
             alert(`Hai vinto! Il tuo punteggio finale è ${score}`);
+            gameOver = true;
             }
         }
     });
