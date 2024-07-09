@@ -26,16 +26,17 @@ let gameOver = false;
 function generateBombs(){
     bombsArray = [];
     while (bombsArray.length < 16){
-        // GENERO UN NUMERO CASUALE RANDOMICO DA 0 A 100
-        let randomNumber = Math.floor(Math.random() * 100);
+        // GENERO UN NUMERO CASUALE RANDOMICO DA 1 A 100
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
         console.log(randomNumber);
         // CREO UNA CONDIZIONE DI CONTROLLO, ASSICURA ASSICURA CHE NON CI SIANO DUPLICATI
         if (!bombsArray.includes(randomNumber)){
             // AGGIUNGO LE BOMBE NELL'ARRAY
             bombsArray.push(randomNumber);
-            console.log(bombsArray);
+            
         } 
     }
+    console.log(bombsArray);
 }
 
 // DEFINISCO LA FUNZIONE CHE CREA I QUADRATI NELLA GRIGLIA
@@ -45,9 +46,11 @@ function createSquare(numero){
         // ASSEGNO LA CLASSE SQUARE ALL'ELEMENTO CREATO
     currentSquare.classList.add('square');
         // VARIABILE PER CREARE IL TESTO ALL'INTERNO DELL'ELEMTO CREATO
-    currentSquare.innerText = numero + 1;
+    currentSquare.innerText = numero;
         // AGGIUNGO L'EVENTO CLICK ALLA CELLA (FUNZIONE ANONIMA)
     currentSquare.addEventListener('click', function (){
+        // EVITO ULTERIORI CLICK SE IL GIOCO E' FINITO
+        if (gameOver) return;
         // STABILISCO LA CONDIZIONE NEL CASO IN CUI TROVO UNA BOMBA 
         if (bombsArray.includes(numero)){
             // LA CELLA CLICCATA DIVENTA ROSSA 
@@ -57,7 +60,7 @@ function createSquare(numero){
             // RESET DELLO SCORE QUANDO L'UTENTE PERDE
             score = 0;
             gameOver = true;
-        } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA la BOMBA
+        } else { // STABILISCO LA CONDIZIONE NEL CASO IN CUI L'UTENTE NON TROVA LA BOMBA
             this.style.backgroundColor = 'lightblue';
             // INCREMENTO DEL PUNTEGGIO
             score++;
@@ -80,6 +83,9 @@ btn.addEventListener('click', function(){
     generateBombs();
     // PULISCO LA GRIGLIA PRIMA DI CREARNE UNA NUOVA
     grid.innerHTML = '';
+    // RESET DELLE VARIABILI DI GIOCO
+    score = 0;
+    gameOver = false;
     // ESEGUO UN CICLO DI 100 ITERAZIONI PER CREARE UNA GRIGLIA 10X10
     for (let i = 0; i<100; i++){
         let square = createSquare(i);
